@@ -1,0 +1,11 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="01_LanguageLab/01_LanguageLab.vcxproj" Id="8c2c047f-a65e-4500-a0b0-b68d9b575740" />
+  <Project Path="02_MemoryLab/02_MemoryLab.vcxproj" Id="5607b2af-5a37-43cb-8f4a-cbe6161bb08f" />
+  <Project Path="03_DeviceModel/03_DeviceModel.vcxproj" Id="4965a0db-899c-4f2d-8888-813316d117bb" />
+  <Project Path="03_DeviceModelEXE/03_DeviceModelEXE.vcxproj" Id="601cd773-db5a-4183-adbc-4f43a30eab92" />
+  <Project Path="CodeSamples/CodeSamples.vcxproj" Id="64143b50-1602-4cd5-bfb8-c67e14fc77d0" />
+</Solution>
