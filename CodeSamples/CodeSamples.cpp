@@ -31,13 +31,34 @@ class volkswagen : car
 {
 };
 
+class Math
+{
+public:
+	int add(int a, int b)
+	{
+		return a + b;
+	}
+	int add(int a, int b, int c)
+	{
+		return a + b + c;
+	}
+};
+
+class SMath : public Math
+{
+public:
+	std::string add(std::string s1, std::string s2)
+	{
+		return s1 + s2;
+	}
+};
+
 void main()
 {
-	vehicle activa;
-	activa.set(150.45, 85);
-	activa.show();
+	Math s1;
+	std::cout << s1.add(10, 20) << "\n";
+	std::cout << s1.add(10, 20, 30) << "\n";
 
-	car beat;
-	beat.set(987.99, 160);
-	beat.show();
+	SMath sM1;
+	std::cout << sM1.add("hello", "world") << "\n";
 }
