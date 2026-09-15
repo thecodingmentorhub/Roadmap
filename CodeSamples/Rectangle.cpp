@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Rectangle.h"
 
+using namespace std;
+
 double rectangle::area()
 {
 	return length * breadth;
