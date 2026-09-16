@@ -1,3 +1,4 @@
+
 #include <iostream>
 
 // Function to update CPU usage
@@ -48,6 +49,56 @@ public:
     }
 };
 
+
+// --------------------------------------------------
+// NEW ROUTER CLASS
+// --------------------------------------------------
+class Router
+{
+private:
+    std::string routerName;
+    std::string ipAddress;
+    int portNumber;
+    bool isConnected;
+
+public:
+    // Constructor
+    Router(std::string name, std::string ip, int port)
+    {
+        routerName = name;
+        ipAddress = ip;
+        portNumber = port;
+        isConnected = false;
+    }
+
+    // Connect router
+    void connect()
+    {
+        isConnected = true;
+        std::cout << "\nRouter connected successfully.\n";
+    }
+
+    // Disconnect router
+    void disconnect()
+    {
+        isConnected = false;
+        std::cout << "Router disconnected.\n";
+    }
+
+    // Display router information
+    void displayRouter()
+    {
+        std::cout << "\n--- Router Information ---\n";
+        std::cout << "Router Name: " << routerName << "\n";
+        std::cout << "IP Address: " << ipAddress << "\n";
+        std::cout << "Port Number: " << portNumber << "\n";
+        std::cout << "Status: "
+            << (isConnected ? "Connected" : "Disconnected")
+            << "\n";
+    }
+};
+
+
 // Addition function
 int doAdd(int x, int y)
 {
@@ -55,6 +106,7 @@ int doAdd(int x, int y)
     result = x + y;
     return result;
 }
+
 
 // Calculation function
 int doCalc()
@@ -69,6 +121,7 @@ int doCalc()
 
     return res;
 }
+
 
 int main()
 {
@@ -86,14 +139,16 @@ int main()
     std::cout << "Updated CPU Usage: "
         << cpuUsage << "\n";
 
+
     // Dynamic memory example
-    double* dynamicUsage{ new double{65.0} };
+    double* dynamicUsage{ new double{ 65.0} };
 
     std::cout << "Dynamic Value: "
         << *dynamicUsage << "\n";
 
     delete dynamicUsage;
     dynamicUsage = nullptr;
+
 
     // Create a StorageServer object
     StorageServer server(1000.0, 450.0);
@@ -106,6 +161,21 @@ int main()
 
     // Display updated storage
     server.displayStorage();
+
+
+    // --------------------------------------------------
+    // NEW ROUTER OBJECT
+    // --------------------------------------------------
+    Router router("Cisco-Router", "192.168.1.1", 8080);
+
+    router.displayRouter();
+
+    router.connect();
+
+    router.displayRouter();
+
+    router.disconnect();
+
 
     // Call calculation function
     int x = doCalc();
