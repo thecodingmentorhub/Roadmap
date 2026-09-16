@@ -1,4 +1,6 @@
+
 #include <iostream>
+#include <string>
 
 // Function to update CPU usage
 void updateUsage(double* usage)
@@ -34,6 +36,14 @@ public:
             << totalStorage - usedStorage << " GB\n";
     }
 
+    // NEW show() method
+    void show()
+    {
+        std::cout << "\n--- Storage Server ---\n";
+        std::cout << "Total: " << totalStorage << " GB\n";
+        std::cout << "Used: " << usedStorage << " GB\n";
+    }
+
     // Update used storage
     void updateUsedStorage(double newUsage)
     {
@@ -48,6 +58,60 @@ public:
     }
 };
 
+
+// Router class
+class Router
+{
+private:
+    std::string routerName;
+    std::string ipAddress;
+    int portNumber;
+    bool isConnected;
+
+public:
+    // Constructor
+    Router(std::string name, std::string ip, int port)
+    {
+        routerName = name;
+        ipAddress = ip;
+        portNumber = port;
+        isConnected = false;
+    }
+
+    // Connect router
+    void connect()
+    {
+        isConnected = true;
+        std::cout << "\nRouter connected successfully.\n";
+    }
+
+    // Disconnect router
+    void disconnect()
+    {
+        isConnected = false;
+        std::cout << "Router disconnected.\n";
+    }
+
+    // NEW show() method
+    void show()
+    {
+        std::cout << "\n--- Router Information ---\n";
+        std::cout << "Router Name: " << routerName << "\n";
+        std::cout << "IP Address: " << ipAddress << "\n";
+        std::cout << "Port Number: " << portNumber << "\n";
+        std::cout << "Status: "
+            << (isConnected ? "Connected" : "Disconnected")
+            << "\n";
+    }
+
+    // Existing display method
+    void displayRouter()
+    {
+        show();
+    }
+};
+
+
 // Addition function
 int doAdd(int x, int y)
 {
@@ -55,6 +119,7 @@ int doAdd(int x, int y)
     result = x + y;
     return result;
 }
+
 
 // Calculation function
 int doCalc()
@@ -69,6 +134,7 @@ int doCalc()
 
     return res;
 }
+
 
 int main()
 {
@@ -86,6 +152,7 @@ int main()
     std::cout << "Updated CPU Usage: "
         << cpuUsage << "\n";
 
+
     // Dynamic memory example
     double* dynamicUsage{ new double{65.0} };
 
@@ -95,17 +162,34 @@ int main()
     delete dynamicUsage;
     dynamicUsage = nullptr;
 
-    // Create a StorageServer object
+
+    // Create StorageServer object
     StorageServer server(1000.0, 450.0);
 
-    // Display initial storage
     server.displayStorage();
 
-    // Update used storage
     server.updateUsedStorage(600.0);
 
-    // Display updated storage
     server.displayStorage();
+
+    // Calling show()
+    server.show();
+
+
+    // Create Router object
+    Router router("Cisco-Router", "192.168.1.1", 8080);
+
+    // Calling show()
+    router.show();
+
+    router.connect();
+
+    router.show();
+
+    router.disconnect();
+
+    router.show();
+
 
     // Call calculation function
     int x = doCalc();
