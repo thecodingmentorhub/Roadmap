@@ -1,20 +1,76 @@
-// 17_ShapesLab.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
 
 #include <iostream>
 
-int main()
+class Shape
 {
-    std::cout << "Hello World!\n";
+public:
+    virtual double area() const = 0;
+
+    virtual ~Shape() = default;
+};
+
+class Rectangle : public Shape
+{
+    double width;
+    double height;
+
+public:
+    Rectangle(double w, double h)
+        : width{ w }, height{ h }
+    {
+    }
+
+    double area() const override
+    {
+        return width * height;
+    }
+};
+
+class Circle : public Shape
+{
+    double radius;
+
+public:
+    Circle(double r)
+        : radius{ r }
+    {
+    }
+
+    double area() const override
+    {
+        constexpr double pi{ 3.14159 };
+        return pi * radius * radius;
+    }
+};
+
+void printArea(const Shape& shape)
+{
+    std::cout << "Area: " << shape.area() << '\n';
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+int main()
+{
+    // Object creation
+    Rectangle rectangle{ 10.0, 5.0 };
+    Circle circle{ 7.0 };
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+    // Same function
+    printArea(rectangle);
+    printArea(circle);
+
+    // Base class reference
+    Shape& shapeRef{ rectangle };
+    printArea(shapeRef);
+
+    shapeRef = circle; // Does NOT change the referred object
+    // (reference cannot be reseated)
+
+// Base class pointer
+    Shape* shapePtr{ &rectangle };
+    printArea(*shapePtr);
+
+    shapePtr = &circle;
+    printArea(*shapePtr);
+
+    return 0;
+}
