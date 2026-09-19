@@ -8,6 +8,7 @@
   <Project Path="03_DeviceModel/03_DeviceModel.vcxproj" Id="4965a0db-899c-4f2d-8888-813316d117bb" />
   <Project Path="03_DeviceModelEXE/03_DeviceModelEXE.vcxproj" Id="601cd773-db5a-4183-adbc-4f43a30eab92" />
   <Project Path="14_LibraryLab/14_LibraryLab.vcxproj" Id="263d6c9a-95a6-4bdd-a177-5b6b2761f0ac" />
+  <Project Path="18_EmployeeLab/18_EmployeeLab.vcxproj" Id="ae7fd6a4-61f0-495c-a602-4726c557204d" />
   <Project Path="Calc/Calc.vcxproj" Id="66019079-49cc-486a-a373-92da8e35a5c0" />
   <Project Path="CodeSamples/CodeSamples.vcxproj" Id="64143b50-1602-4cd5-bfb8-c67e14fc77d0" />
 </Solution>
