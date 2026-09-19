@@ -7,7 +7,7 @@
   <Project Path="02_MemoryLab/02_MemoryLab.vcxproj" Id="5607b2af-5a37-43cb-8f4a-cbe6161bb08f" />
   <Project Path="03_DeviceModel/03_DeviceModel.vcxproj" Id="4965a0db-899c-4f2d-8888-813316d117bb" />
   <Project Path="03_DeviceModelEXE/03_DeviceModelEXE.vcxproj" Id="601cd773-db5a-4183-adbc-4f43a30eab92" />
-  <Project Path="19_NotificationLab/19_NotificationLab.vcxproj" Id="e75cd59e-3dca-43a9-953e-3e1b5a95a07d" />
+  <Project Path="2_ParkingLab/2_ParkingLab.vcxproj" Id="89715ac4-2878-4be8-8e43-d529d3586c1e" />
   <Project Path="Calc/Calc.vcxproj" Id="66019079-49cc-486a-a373-92da8e35a5c0" />
   <Project Path="CodeSamples/CodeSamples.vcxproj" Id="64143b50-1602-4cd5-bfb8-c67e14fc77d0" />
 </Solution>
