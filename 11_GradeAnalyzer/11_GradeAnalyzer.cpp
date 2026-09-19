@@ -9,6 +9,10 @@ double calculateAverage(const int marks[], int size);
 int findHighest(const int marks[], int size);
 int findLowest(const int marks[], int size);
 
+#include <iostream>
+
+int readValidMark(int markNumber);
+
 int main()
 {
     std::cout << "GRADE ANALYZER\n";
@@ -145,4 +149,5 @@ int findLowest(const int marks[], int size)
     }
 
     return lowest;
+}
 }
