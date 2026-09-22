@@ -150,4 +150,4 @@ int findLowest(const int marks[], int size)
 
     return lowest;
 }
-}
+};
