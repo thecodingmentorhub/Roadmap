@@ -1,79 +1,106 @@
-
-#include <iostream>
 #include <iomanip>
+#include <iostream>
+#include <string>
 
 // Function declarations
 int readValidMark(int markNumber);
 
-double calculateAverage(const int marks[], int size);
-int findHighest(const int marks[], int size);
-int findLowest(const int marks[], int size);
+double calculateAverage(const int marks[], int subjectCount);
 
-#include <iostream>
+int findHighestMark(const int marks[], int subjectCount);
 
-int readValidMark(int markNumber);
+int findLowestMark(const int marks[], int subjectCount);
+
+std::string getResult(
+    const int marks[],
+    int subjectCount,
+    double average);
+
+char getGrade(
+    const int marks[],
+    int subjectCount,
+    double average);
+
+void displayResult(
+    double average,
+    int highest,
+    int lowest,
+    const std::string& result,
+    char grade);
+
 
 int main()
 {
+    const int subjectCount{ 5 };
+
+    int marks[subjectCount]{};
+
     std::cout << "GRADE ANALYZER\n";
     std::cout << "--------------------------------\n";
 
-    int marks[5]{};
-
-    // -----------------------------------------
-    // Read five valid marks
-    // -----------------------------------------
-    for (int index{}; index < 5; index++)
+    // Step 1: Read and validate marks
+    for (int index{}; index < subjectCount; index++)
     {
         marks[index] = readValidMark(index + 1);
     }
 
-    // -----------------------------------------
-    // Display marks entered
-    // -----------------------------------------
+    // Display entered marks
     std::cout << "\nMARKS ENTERED\n";
     std::cout << "--------------------------------\n";
 
-    for (int index{}; index < 5; index++)
+    for (int index{}; index < subjectCount; index++)
     {
-        std::cout << "Mark " << index + 1
+        std::cout << "Subject " << index + 1
             << ": " << marks[index]
             << '\n';
     }
 
-    // -----------------------------------------
-    // Calculate results
-    // -----------------------------------------
-    double average = calculateAverage(marks, 5);
-    int highest = findHighest(marks, 5);
-    int lowest = findLowest(marks, 5);
+    // Step 2: Calculate average
+    double average{
+        calculateAverage(marks, subjectCount)
+    };
 
-    // -----------------------------------------
-    // Display results
-    // -----------------------------------------
-    std::cout << "\nGRADE ANALYSIS\n";
-    std::cout << "--------------------------------\n";
+    // Step 3: Find highest mark
+    int highest{
+        findHighestMark(marks, subjectCount)
+    };
 
-    std::cout << std::fixed << std::setprecision(2);
+    // Step 4: Find lowest mark
+    int lowest{
+        findLowestMark(marks, subjectCount)
+    };
 
-    std::cout << "Average Mark : " << average << '\n';
-    std::cout << "Highest Mark : " << highest << '\n';
-    std::cout << "Lowest Mark  : " << lowest << '\n';
+    // Step 5: Determine Pass / Fail
+    std::string result{
+        getResult(marks, subjectCount, average)
+    };
+
+    // Step 6: Determine Grade
+    char grade{
+        getGrade(marks, subjectCount, average)
+    };
+
+    // Step 7: Display final result
+    displayResult(
+        average,
+        highest,
+        lowest,
+        result,
+        grade);
 
     return 0;
 }
 
 
-// --------------------------------------------------
-// Read and validate a mark
-// --------------------------------------------------
+// Read and validate one subject mark
 int readValidMark(int markNumber)
 {
     int mark{};
 
     while (true)
     {
-        std::cout << "Enter mark " << markNumber
+        std::cout << "Enter mark for Subject "
+            << markNumber
             << " (0-100): ";
 
         std::cin >> mark;
@@ -83,13 +110,17 @@ int readValidMark(int markNumber)
             std::cin.clear();
             std::cin.ignore(1000, '\n');
 
-            std::cout << "Invalid input. Please enter a number.\n";
+            std::cout << "Invalid input. "
+                << "Please enter a number.\n";
+
             continue;
         }
 
         if (mark < 0 || mark > 100)
         {
-            std::cout << "Invalid mark. Enter a value between 0 and 100.\n";
+            std::cout << "Invalid mark. "
+                << "Enter a value between 0 and 100.\n";
+
             continue;
         }
 
@@ -98,30 +129,30 @@ int readValidMark(int markNumber)
 }
 
 
-// --------------------------------------------------
-// Calculate average of five marks
-// --------------------------------------------------
-double calculateAverage(const int marks[], int size)
+// Calculate average of all subjects
+double calculateAverage(
+    const int marks[],
+    int subjectCount)
 {
     int total{};
 
-    for (int index{}; index < size; index++)
+    for (int index{}; index < subjectCount; index++)
     {
         total += marks[index];
     }
 
-    return static_cast<double>(total) / size;
+    return static_cast<double>(total) / subjectCount;
 }
 
 
-// --------------------------------------------------
-// Find the highest mark
-// --------------------------------------------------
-int findHighest(const int marks[], int size)
+// Find highest mark
+int findHighestMark(
+    const int marks[],
+    int subjectCount)
 {
-    int highest = marks[0];
+    int highest{ marks[0] };
 
-    for (int index{ 1 }; index < size; index++)
+    for (int index{ 1 }; index < subjectCount; index++)
     {
         if (marks[index] > highest)
         {
@@ -133,14 +164,14 @@ int findHighest(const int marks[], int size)
 }
 
 
-// --------------------------------------------------
-// Find the lowest mark
-// --------------------------------------------------
-int findLowest(const int marks[], int size)
+// Find lowest mark
+int findLowestMark(
+    const int marks[],
+    int subjectCount)
 {
-    int lowest = marks[0];
+    int lowest{ marks[0] };
 
-    for (int index{ 1 }; index < size; index++)
+    for (int index{ 1 }; index < subjectCount; index++)
     {
         if (marks[index] < lowest)
         {
@@ -150,4 +181,4 @@ int findLowest(const int marks[], int size)
 
     return lowest;
 }
-}
+};
