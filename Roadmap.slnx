@@ -7,6 +7,7 @@
   <Project Path="02_MemoryLab/02_MemoryLab.vcxproj" Id="5607b2af-5a37-43cb-8f4a-cbe6161bb08f" />
   <Project Path="03_DeviceModel/03_DeviceModel.vcxproj" Id="4965a0db-899c-4f2d-8888-813316d117bb" />
   <Project Path="03_DeviceModelEXE/03_DeviceModelEXE.vcxproj" Id="601cd773-db5a-4183-adbc-4f43a30eab92" />
+  <Project Path="12_BankingLab class/12_BankingLab class.vcxproj" Id="9176f759-9e07-4d67-8736-bcd7d352803e" />
   <Project Path="10_Calculator/10_Calculator.vcxproj" Id="b0fc3370-6f15-4d84-bae2-25350ef983f1" />
   <Project Path="11_GradeAnalyzer/11_GradeAnalyzer.vcxproj" Id="cc31f583-4a10-4942-baa4-4f9cc456bee2" />
   <Project Path="13_PaymentLab/13_PaymentLab.vcxproj" Id="bec56556-423e-4645-8c05-480facf3d022" />
