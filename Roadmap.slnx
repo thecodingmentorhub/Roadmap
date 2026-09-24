@@ -14,14 +14,16 @@
   <Project Path="12_BankingLab class/12_BankingLab class.vcxproj" Id="9176f759-9e07-4d67-8736-bcd7d352803e" />
   <Project Path="10_Calculator/10_Calculator.vcxproj" Id="b0fc3370-6f15-4d84-bae2-25350ef983f1" />
   <Project Path="11_GradeAnalyzer/11_GradeAnalyzer.vcxproj" Id="cc31f583-4a10-4942-baa4-4f9cc456bee2" />
+  <Project Path="12_BankingLab class/12_BankingLab class.vcxproj" Id="9176f759-9e07-4d67-8736-bcd7d352803e" />
   <Project Path="13_PaymentLab/13_PaymentLab.vcxproj" Id="bec56556-423e-4645-8c05-480facf3d022" />
   <Project Path="14_LibraryLab/14_LibraryLab.vcxproj" Id="263d6c9a-95a6-4bdd-a177-5b6b2761f0ac" />
   <Project Path="17_ShapesLab/17_ShapesLab.vcxproj" Id="35d8f646-738c-42c3-a206-0e87535d5aa0" />
   <Project Path="18_EmployeeLab/18_EmployeeLab.vcxproj" Id="ae7fd6a4-61f0-495c-a602-4726c557204d" />
+  <Project Path="23_ThisKeywordLab/23_ThisKeywordLab.vcxproj" Id="fd9993c1-083c-4e1d-b06e-ffb24d710b83" />
   <Project Path="25_InheritanceLab/25_InheritanceLab.vcxproj" Id="79dbf625-bb8c-48e0-8769-054890982037" />
   <Project Path="24_ShapesLab/24_ShapesLab.vcxproj" Id="5fb48688-b783-4e1b-9482-baa106439b3c" />
+  <Project Path="27_AbstractClassLab/27_AbstractClassLab.vcxproj" Id="3ab4b863-3ecc-4cef-be0d-379c66c73d3a" />
   <Project Path="28_InterfaceLab/28_InterfaceLab.vcxproj" Id="b7dbc1dd-d571-4f26-8923-16774afa7c68" />
-  <Project Path="23_ThisKeywordLab/23_ThisKeywordLab.vcxproj" Id="fd9993c1-083c-4e1d-b06e-ffb24d710b83" />
   <Project Path="2_ParkingLab/2_ParkingLab.vcxproj" Id="89715ac4-2878-4be8-8e43-d529d3586c1e" />
   <Project Path="Calc/Calc.vcxproj" Id="66019079-49cc-486a-a373-92da8e35a5c0" />
   <Project Path="CodeSamples/CodeSamples.vcxproj" Id="64143b50-1602-4cd5-bfb8-c67e14fc77d0" />
